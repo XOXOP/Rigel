@@ -67,4 +67,82 @@ public class Main  {
     }
 }
 
+class Divider {
+    public static String findaNumber() throws IOException {
+
+        String[] strings = Main.strings;
+        strings[2] = strings[2].replace("/", " ");
+        strings[2] = strings[2].trim();
+
+        int num = parseInt(strings[2]);
+        if(num >1 && num <11){
+            String resul = strings[1].substring(0, strings[1].length() / num);
+
+            return resul;
+
+        }else {
+            throw new IOException();
+        }
+
+
+
+
+    }
+}
+
+class Minus {
+    public static String cutPart() throws IOException {
+
+        String[] strings = Main.strings;
+        if(strings[3].length()<11 && strings.length== 4){
+            String[] chart = strings[1].split(" ");
+            String[] sharp = strings[3].split(" ");
+
+            Collection c2 = new ArrayList<>();
+            for (String elem : chart) {
+                boolean add = c2.add(elem);
+            }
+            Collection e2 = new ArrayList<>();
+            for (String elem : sharp) {
+                boolean add = e2.add(elem);
+            }
+            c2.removeAll(e2);
+
+            String resul = " ";
+
+            for (Object str : c2) {
+                resul += str;
+            }
+
+            return resul;
+        }else {
+            throw new IOException();
+        }
+
+    }
+}
+class Multiply{
+
+    public static String findaNumber() throws IOException {
+
+        String[] strings = Main.strings;
+        strings[2] = strings[2].replace("*"," ");
+        strings[2] = strings[2].trim();
+
+        int num= parseInt(strings[2]);
+        if(num >1 && num <11) {
+
+            String resul = strings[1];
+            for (int i = 1; i < num; i++) {
+                resul += strings[1];
+            }
+
+            return resul;
+        }else{
+            throw new IOException();
+        }
+
+    }
+
+}
 
